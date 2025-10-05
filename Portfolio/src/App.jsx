@@ -2,6 +2,8 @@ import Particles from "react-tsparticles";
 import { useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
+import bgImg from "./assets/keyboard-bg.jpg";
+import meImg from "./assets/myphoto.jpg";
 
 /* ===== Site-wide moving diagonal background ===== */
 function BackgroundFX() {
@@ -138,11 +140,14 @@ export default function App() {
       <section className="relative min-h-[70vh]">
         {/* Background image + veil */}
         <div className="absolute inset-0 -z-10">
-          <img
-            src="/keyboard-bg.jpg" /* make sure this file is in /public */
+          <img src={bgImg} alt="Background keyboard" className="w-full h-full object-cover" />
+
+
+          {/* <img
+            src={`${import.meta.env.BASE_URL}keyboard-bg.jpg`}
             alt="Background keyboard"
             className="w-full h-full object-cover"
-          />
+          /> */ }
         </div>
 
         {/* Top-right: About • Let’s Connect */}
@@ -218,11 +223,12 @@ export default function App() {
 
             {/* Right: Profile photo */}
             <div className="col-span-12 md:col-span-5 flex justify-center md:justify-end">
-              <img
-                src="/myphoto.jpg" /* place your photo in /public */
+              <img src={meImg} alt="Siri Mallipeddi" className="w-64 h-64 lg:w-80 lg:h-80 rounded-full object-cover ring-4 ring-white/90 shadow-xl" />
+             {/* <img
+                src={`${import.meta.env.BASE_URL}myphoto.jpg`}
                 alt="Siri Mallipeddi"
                 className="w-64 h-64 lg:w-80 lg:h-80 rounded-full object-cover ring-4 ring-white/90 shadow-xl"
-              />
+              /> */ }
             </div>
           </div>
         </div>
